@@ -26,9 +26,11 @@
     <option value="">-- Anneau 1 --</option>
     <?php
     
-    $colorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"];
-    foreach ($colorRing12 as $color) {
-        echo "<option value=$color>$color</option>";
+    $ColorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"];
+    foreach ($ColorRing12 as $color) {
+        ?>
+        <option value="<?=$color ?>"><?= $color ?></option>
+        <?php
     }
     ?>
     
@@ -36,55 +38,43 @@
 
 <select name="" id="color-select2">
     <option value="">-- Anneau 2 --</option>
-    <option value="noir">Noir</option>
-    <option value="brun">Brun</option>
-    <option value="rouge">Rouge</option>
-    <option value="orange">Orange</option>
-    <option value="jaune">Jaune</option>
-    <option value="vert">Vert</option>
-    <option value="bleu">Bleu</option>
-    <option value="violet">Violet</option>
-    <option value="gris">Gris</option>
-    <option value="blanc">Blanc</option>
-    <option value="or">Or</option>
-    <option value="argent">Argent</option>
+    <?php
+foreach($ColorRing12 as $color) {
+?>
+    <option value="<?= $color ?>"><?= $color ?></option>
+<?php
+}
+?>
+
 </select>
+
 <select name="" id="color-select3">
+    <option value="">-- Anneau 3--</option>
     <?php
     $ColorRing3 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc", "or", "argent"];
-    ?>
-    <option value="">-- Anneau 3--</option>
-    <option value="noir">Noir</option>
-    <option value="brun">Brun</option>
-    <option value="rouge">Rouge</option>
-    <option value="orange">Orange</option>
-    <option value="jaune">Jaune</option>
-    <option value="vert">Vert</option>
-    <option value="bleu">Bleu</option>
-    <option value="violet">Violet</option>
-    <option value="gris">Gris</option>
-    <option value="blanc">Blanc</option>
-    <option value="or">Or</option>
-    <option value="argent">Argent</option>
+    
+foreach($ColorRing3 as $color) {
+?>
+    <option value="<?= $color ?>"><?= $color ?></option>
+<?php
+}
+?>
+
 </select>
+
 <select name="" id="color-select4">
 
+    <option value="">-- Anneau 4--</option>
 <?php
 $ColorRing4 = ["brun", "rouge", "vert", "bleu", "violet", "gris", "or", "argent"];
+
+foreach($ColorRing4 as $color) {
 ?>
-    <option value="">-- Anneau 4--</option>
-    <option value="noir">Noir</option>
-    <option value="brun">Brun</option>
-    <option value="rouge">Rouge</option>
-    <option value="orange">Orange</option>
-    <option value="jaune">Jaune</option>
-    <option value="vert">Vert</option>
-    <option value="bleu">Bleu</option>
-    <option value="violet">Violet</option>
-    <option value="gris">Gris</option>
-    <option value="blanc">Blanc</option>
-    <option value="or">Or</option>
-    <option value="argent">Argent</option>
+    <option value="<?= $color ?>"><?= $color ?></option>
+<?php
+}
+?>
+
 </select>
 </body>
 </html>
