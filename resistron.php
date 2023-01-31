@@ -26,8 +26,8 @@
     <option value="">-- Anneau 1 --</option>
     <?php
     
-    $ColorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"];
-    foreach ($ColorRing12 as $color) {
+    $ColorRing12 = ["noir" => 0, "brun" => 1, "rouge" => 2, "orange" => 3, "jaune" => 4, "vert" => 5, "bleu" => 6, "violet" => 7, "gris" => 8, "blanc" => 9];
+    foreach ($ColorRing12 as $color => $value) {
         ?>
         <option value="<?=$color ?>"><?= $color ?></option>
         <?php
@@ -39,7 +39,7 @@
 <select name="" id="color-select2">
     <option value="">-- Anneau 2 --</option>
     <?php
-foreach($ColorRing12 as $color) {
+foreach($ColorRing12 as $color => $value) {
 ?>
     <option value="<?= $color ?>"><?= $color ?></option>
 <?php
