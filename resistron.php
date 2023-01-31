@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resistron</title>
+    <style>
+        label {
+    font-size: 1rem;
+    padding-right: 10px;
+        }
+
+        select {
+    font-size: 0.9rem;
+    padding: 2px 5px;
+        }
+    </style>
+    
 </head>
 <body>
 <label for="color-select1">Choisissez les couleurs correspondantes :</label>
