@@ -22,22 +22,16 @@
 <label for="color-select1">Choisissez les couleurs correspondantes :</label>
 
 <select name="color" id="color-select1">
-    <?php
-    $colorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"]
-    ?>
+
     <option value="">-- Anneau 1 --</option>
-    <option value="noir">Noir</option>
-    <option value="brun">Brun</option>
-    <option value="rouge">Rouge</option>
-    <option value="orange">Orange</option>
-    <option value="jaune">Jaune</option>
-    <option value="vert">Vert</option>
-    <option value="bleu">Bleu</option>
-    <option value="violet">Violet</option>
-    <option value="gris">Gris</option>
-    <option value="blanc">Blanc</option>
-    <option value="or">Or</option>
-    <option value="argent">Argent</option>
+    <?php
+    
+    $colorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"];
+    foreach ($colorRing12 as $color) {
+        echo "<option value=$color>$color</option>";
+    }
+    ?>
+    
 </select>
 
 <select name="" id="color-select2">
@@ -57,7 +51,7 @@
 </select>
 <select name="" id="color-select3">
     <?php
-    $ColorRing3 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc", "or", "argent"]
+    $ColorRing3 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc", "or", "argent"];
     ?>
     <option value="">-- Anneau 3--</option>
     <option value="noir">Noir</option>
@@ -76,7 +70,7 @@
 <select name="" id="color-select4">
 
 <?php
-$ColorRing4 = ["brun", "rouge", "vert", "bleu", "violet", "gris", "or", "argent"]
+$ColorRing4 = ["brun", "rouge", "vert", "bleu", "violet", "gris", "or", "argent"];
 ?>
     <option value="">-- Anneau 4--</option>
     <option value="noir">Noir</option>
