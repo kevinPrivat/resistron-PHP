@@ -74,9 +74,9 @@ foreach($ColorRing12 as $color => $value) {
 
     <option value="">-- Anneau 4--</option>
 <?php
-$ColorRing4 = ["brun", "rouge", "vert", "bleu", "violet", "gris", "or", "argent"];
+$ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5 , "bleu" => 0.25, "violet" => 0.10, "gris"=> 0.05, "or"=> 5, "argent" => 10];
 
-foreach($ColorRing4 as $color) {
+foreach($ColorRing4 as $color => $value) {
 ?>
     <option value="<?= $color ?>"><?= $color ?></option>
 <?php
