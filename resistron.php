@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+    const KILO = 1_000;
+    const MEGA = 1_000_000;
+    const GIGA = 1_000_000_000;
+?><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -51,15 +55,19 @@ foreach($ColorRing12 as $color => $value) {
 <select name="" id="color-select3">
     <option value="">-- Anneau 3--</option>
     <?php
-    $ColorRing3 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc", "or", "argent"];
-    
-foreach($ColorRing3 as $color) {
-?>
-    <option value="<?= $color ?>"><?= $color ?></option>
-<?php
-}
-?>
+    $ColorRing3 = [
+        "noir"   => 1,      "brun"   => 10,      "rouge" => 100, 
+        "orange" => 1*KILO, "jaune"  => 10*KILO, "vert"  => 100*KILO, 
+        "bleu"   => 1*MEGA, "violet" => 10*MEGA, "gris"  => 100*MEGA, 
+        "blanc"  => 1*GIGA, 
+        "or" => 0.1, "argent" => 0.01];
 
+    foreach($ColorRing3 as $color => $value) {
+    ?>
+        <option value="<?= $color ?>"><?= $color ?></option>
+    <?php
+    }
+    ?>
 </select>
 
 <select name="" id="color-select4">
