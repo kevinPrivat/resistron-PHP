@@ -22,6 +22,9 @@
 <label for="color-select1">Choisissez les couleurs correspondantes :</label>
 
 <select name="color" id="color-select1">
+    <?php
+    $colorRing12 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc"]
+    ?>
     <option value="">-- Anneau 1 --</option>
     <option value="noir">Noir</option>
     <option value="brun">Brun</option>
@@ -53,6 +56,9 @@
     <option value="argent">Argent</option>
 </select>
 <select name="" id="color-select3">
+    <?php
+    $ColorRing3 = ["noir", "brun", "rouge", "orange", "jaune", "vert", "bleu", "violet", "gris", "blanc", "or", "argent"]
+    ?>
     <option value="">-- Anneau 3--</option>
     <option value="noir">Noir</option>
     <option value="brun">Brun</option>
@@ -68,6 +74,10 @@
     <option value="argent">Argent</option>
 </select>
 <select name="" id="color-select4">
+
+<?php
+$ColorRing4 = ["brun", "rouge", "vert", "bleu", "violet", "gris", "or", "argent"]
+?>
     <option value="">-- Anneau 4--</option>
     <option value="noir">Noir</option>
     <option value="brun">Brun</option>
@@ -84,3 +94,6 @@
 </select>
 </body>
 </html>
+
+
+
