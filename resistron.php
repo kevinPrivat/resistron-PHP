@@ -23,12 +23,13 @@
     
 </head>
 <body>
-<label for="color-select1">Choisissez les couleurs correspondantes :</label>
 
-<select name="color" id="color-select1">
+<form action="" method="get">
 
-    <option value="">-- Anneau 1 --</option>
-    <?php
+    <select name="color" id="color-select1">
+        
+        <option value="">-- Anneau 1 --</option>
+        <?php
     
     $ColorRing12 = ["noir" => 0, "brun" => 1, "rouge" => 2, "orange" => 3, "jaune" => 4, "vert" => 5, "bleu" => 6, "violet" => 7, "gris" => 8, "blanc" => 9];
     foreach ($ColorRing12 as $color => $value) {
@@ -61,19 +62,19 @@ foreach($ColorRing12 as $color => $value) {
         "bleu"   => 1*MEGA, "violet" => 10*MEGA, "gris"  => 100*MEGA, 
         "blanc"  => 1*GIGA, 
         "or" => 0.1, "argent" => 0.01];
-
-    foreach($ColorRing3 as $color => $value) {
-    ?>
+        
+        foreach($ColorRing3 as $color => $value) {
+            ?>
         <option value="<?= $color ?>"><?= $color ?></option>
-    <?php
+        <?php
     }
     ?>
 </select>
 
 <select name="" id="color-select4">
-
+    
     <option value="">-- Anneau 4--</option>
-<?php
+    <?php
 $ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5 , "bleu" => 0.25, "violet" => 0.10, "gris"=> 0.05, "or"=> 5, "argent" => 10];
 
 foreach($ColorRing4 as $color => $value) {
@@ -84,6 +85,8 @@ foreach($ColorRing4 as $color => $value) {
 ?>
 
 </select>
+</form>
+
 </body>
 </html>
 
