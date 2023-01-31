@@ -2,6 +2,12 @@
     const KILO = 1_000;
     const MEGA = 1_000_000;
     const GIGA = 1_000_000_000;
+
+    $ring1 = $_GET['ring1'];
+    $ring2 = $_GET['ring2'];
+    $ring3 = $_GET['ring3'];
+    $ring4 = $_GET['ring4'];
+
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,7 +32,7 @@
 
 <form action="" method="get">
 
-    <select name="color" id="color-select1">
+    <select name="ring1" id="color-select1">
         
         <option value="">-- Anneau 1 --</option>
         <?php
@@ -41,7 +47,7 @@
     
 </select>
 
-<select name="" id="color-select2">
+<select name="ring2" id="color-select2">
     <option value="">-- Anneau 2 --</option>
     <?php
 foreach($ColorRing12 as $color => $value) {
@@ -53,7 +59,7 @@ foreach($ColorRing12 as $color => $value) {
 
 </select>
 
-<select name="" id="color-select3">
+<select name="ring3" id="color-select3">
     <option value="">-- Anneau 3--</option>
     <?php
     $ColorRing3 = [
@@ -71,7 +77,7 @@ foreach($ColorRing12 as $color => $value) {
     ?>
 </select>
 
-<select name="" id="color-select4">
+<select name="ring4" id="color-select4">
     
     <option value="">-- Anneau 4--</option>
     <?php
