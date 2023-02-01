@@ -34,10 +34,10 @@ function option($ring, $color) { ?>
 <?php
 }
 
-$number1 = $ColorRing12[$ring1] ?? null;
-$number2 = $ColorRing12[$ring2] ?? null;
-$multiple = $ColorRing3[$ring3] ?? null;
-$tolerance = $ColorRing4[$ring4] ?? null;
+$number1 = $color_ring12[$ring1] ?? null;
+$number2 = $color_ring12[$ring2] ?? null;
+$multiple = $color_ring3[$ring3] ?? null;
+$tolerance = $color_ring4[$ring4] ?? null;
 
 echo $number1 . $number2 * $multiple;
 echo $tolerance;
