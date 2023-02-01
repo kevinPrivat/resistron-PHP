@@ -40,7 +40,7 @@ $multiple = $color_ring3[$ring3] ?? null;
 $tolerance = $color_ring4[$ring4] ?? null;
 
 $resistance = ($number1 . $number2) * $multiple;
-echo $tolerance;
+$tolerance;
 
 ?><!DOCTYPE html>
 
@@ -104,7 +104,7 @@ echo $tolerance;
         </select>
 
         <input type="submit" value="submit">
-
+        <br>
         <label><input type="number" value="<?= $resistance ?>" disabled>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
 
