@@ -2,6 +2,7 @@
 const KILO = 1_000;
 const MEGA = 1_000_000;
 const GIGA = 1_000_000_000;
+const MILI = 1/KILO;
 
 $ring1 = isset($_GET['ring1']) ? $_GET['ring1'] : null;
 if (isset($_GET['ring1'])) {
@@ -41,6 +42,23 @@ $multiple = $color_ring3[$ring3] ?? 0;
 $tolerance = $color_ring4[$ring4] ?? 0;
 
 $resistance = ($number1 . $number2) * $multiple;
+
+$divisor = 1;
+$unit = "";
+
+if ($resistance > GIGA) { 
+    $divisor = GIGA;
+    $unit = "G";
+} else if ($resistance > MEGA) {
+    $divisor = MEGA;
+    $unit = "M";
+} else if ($resistance > KILO) {
+    $divisor = KILO;
+    $unit = "K";
+} else if ($resistance < 1) {
+    $divisor = MILI;
+    $unit = "m";
+}
 
 ?><!DOCTYPE html>
 
@@ -105,7 +123,7 @@ $resistance = ($number1 . $number2) * $multiple;
 
         <input type="submit" value="submit">
         <br>
-        <label><input type="number" value="<?= $resistance ?>" disabled>Ω</label>
+        <label><input type="number" value="<?= $resistance/$divisor ?>" disabled><?=$unit?>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
 
     </form>
