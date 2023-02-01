@@ -3,12 +3,12 @@ const KILO = 1_000;
 const MEGA = 1_000_000;
 const GIGA = 1_000_000_000;
 
-$ring1 = isset($_GET['ring1']) ? $_GET['ring1'] : null;
-if (isset($_GET['ring1'])) {
-    $ring = $_GET['ring1'];
-} else {
-    $ring = null;
-}
+// $ring1 = isset($_GET['ring1']) ? $_GET['ring1'] : null;
+// if (isset($_GET['ring1'])) {
+//     $ring = $_GET['ring1'];
+// } else {
+//     $ring = null;
+// }
 
 $ring1 = $_GET['ring1'] ?? null;
 $ring2 = $_GET['ring2'] ?? null;
@@ -24,6 +24,10 @@ $ColorRing3 = [
     "or" => 0.1, "argent" => 0.01
 ];
 $ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5, "bleu" => 0.25, "violet" => 0.10, "gris" => 0.05, "or" => 5, "argent" => 10];
+
+function option($ring, $color) {
+   ?> <option value="<?= $color ?>" <?php if ($ring == $color) { echo ' selected="selected"'; }?>><?= $color ?></option>;
+<?php }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -54,18 +58,18 @@ $ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5, "bleu" => 0.25, "violet
         <select name="ring1" id="color-select1">
             <option value="">-- Anneau 1 --</option>
             <?php
-            foreach ($ColorRing12 as $color => $value) { ?>
-                <option value="<?= $color ?>"><?= $color ?></option>
-            <?php } ?>
+            foreach ($ColorRing12 as $color => $value) { 
+                option($ring1, $color);
+             } ?>
 
         </select>
 
-        <select name="" id="color-select2">
+        <select name="ring2" id="color-select2">
             <option value="">-- Anneau 2 --</option>
             <?php
-            foreach ($ColorRing12 as $color => $value) { ?>
-                <option value="<?= $color ?>"><?= $color ?></option>
-            <?php } ?>
+            foreach ($ColorRing12 as $color => $value) { 
+                option($ring2, $color);
+            } ?>
 
         </select>
 
@@ -73,9 +77,9 @@ $ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5, "bleu" => 0.25, "violet
             <option value="">-- Anneau 3--</option>
             <?php
 
-            foreach ($ColorRing3 as $color => $value) { ?>
-                <option value="<?= $color ?>"><?= $color ?></option>
-            <?php } ?>
+            foreach ($ColorRing3 as $color => $value) { 
+                option($ring3, $color);
+            } ?>
         </select>
 
         <select name="ring4" id="color-select4">
@@ -84,11 +88,12 @@ $ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5, "bleu" => 0.25, "violet
             <?php
             
 
-            foreach ($ColorRing4 as $color => $value) { ?>
-                <option value="<?= $color ?>"><?= $color ?></option>
-            <?php } ?>
+            foreach ($ColorRing4 as $color => $value) {
+                option($ring4, $color);
+            } ?>
 
         </select>
+        <input type="submit" value="submit">
     </form>
 
 </body>
