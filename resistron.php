@@ -30,7 +30,7 @@ function option($ring, $color) { ?>
     <option value="<?= $color ?>" 
     <?php if ($ring == $color) { 
         echo ' selected="selected"';
-    } ?>></option>
+    } ?>><?= $color ?></option>
 <?php
 }
 
