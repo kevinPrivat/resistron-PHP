@@ -33,7 +33,17 @@ function option($ring, $color) { ?>
     } ?>></option>
 <?php
 }
+
+$number1 = $ColorRing12[$ring1] ?? null;
+$number2 = $ColorRing12[$ring2] ?? null;
+$multiple = $ColorRing3[$ring3] ?? null;
+$tolerance = $ColorRing4[$ring4] ?? null;
+
+echo $number1 . $number2 * $multiple;
+echo $tolerance;
+
 ?><!DOCTYPE html>
+
 <html lang="fr">
 
 <head>
