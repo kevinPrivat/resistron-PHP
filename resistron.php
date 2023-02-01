@@ -1,15 +1,33 @@
 <?php
-    const KILO = 1_000;
-    const MEGA = 1_000_000;
-    const GIGA = 1_000_000_000;
+const KILO = 1_000;
+const MEGA = 1_000_000;
+const GIGA = 1_000_000_000;
 
-    $ring1 = $_GET['ring1'];
-    $ring2 = $_GET['ring2'];
-    $ring3 = $_GET['ring3'];
-    $ring4 = $_GET['ring4'];
+$ring1 = isset($_GET['ring1']) ? $_GET['ring1'] : null;
+if (isset($_GET['ring1'])) {
+    $ring = $_GET['ring1'];
+} else {
+    $ring = null;
+}
 
-?><!DOCTYPE html>
+$ring1 = $_GET['ring1'] ?? null;
+$ring2 = $_GET['ring2'] ?? null;
+$ring3 = $_GET['ring3'] ?? null;
+$ring4 = $_GET['ring4'] ?? null;
+
+$ColorRing12 = ["noir" => 0, "brun" => 1, "rouge" => 2, "orange" => 3, "jaune" => 4, "vert" => 5, "bleu" => 6, "violet" => 7, "gris" => 8, "blanc" => 9];
+$ColorRing3 = [
+    "noir"   => 1,        "brun"   => 10,        "rouge" => 100,
+    "orange" => 1 * KILO, "jaune"  => 10 * KILO, "vert"  => 100 * KILO,
+    "bleu"   => 1 * MEGA, "violet" => 10 * MEGA, "gris"  => 100 * MEGA,
+    "blanc"  => 1 * GIGA,
+    "or" => 0.1, "argent" => 0.01
+];
+$ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5, "bleu" => 0.25, "violet" => 0.10, "gris" => 0.05, "or" => 5, "argent" => 10];
+?>
+<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,84 +35,62 @@
     <title>Resistron</title>
     <style>
         label {
-    font-size: 1rem;
-    padding-right: 10px;
+            font-size: 1rem;
+            padding-right: 10px;
         }
 
         select {
-    font-size: 0.9rem;
-    padding: 2px 5px;
+            font-size: 0.9rem;
+            padding: 2px 5px;
         }
     </style>
-    
+
 </head>
+
 <body>
 
-<form action="" method="get">
+    <form action="" method="get">
 
-    <select name="ring1" id="color-select1">
-        
-        <option value="">-- Anneau 1 --</option>
-        <?php
-    
-    $ColorRing12 = ["noir" => 0, "brun" => 1, "rouge" => 2, "orange" => 3, "jaune" => 4, "vert" => 5, "bleu" => 6, "violet" => 7, "gris" => 8, "blanc" => 9];
-    foreach ($ColorRing12 as $color => $value) {
-        ?>
-        <option value="<?=$color ?>"><?= $color ?></option>
-        <?php
-    }
-    ?>
-    
-</select>
+        <select name="ring1" id="color-select1">
+            <option value="">-- Anneau 1 --</option>
+            <?php
+            foreach ($ColorRing12 as $color => $value) { ?>
+                <option value="<?= $color ?>"><?= $color ?></option>
+            <?php } ?>
 
-<select name="ring2" id="color-select2">
-    <option value="">-- Anneau 2 --</option>
-    <?php
-foreach($ColorRing12 as $color => $value) {
-?>
-    <option value="<?= $color ?>"><?= $color ?></option>
-<?php
-}
-?>
+        </select>
 
-</select>
+        <select name="" id="color-select2">
+            <option value="">-- Anneau 2 --</option>
+            <?php
+            foreach ($ColorRing12 as $color => $value) { ?>
+                <option value="<?= $color ?>"><?= $color ?></option>
+            <?php } ?>
 
-<select name="ring3" id="color-select3">
-    <option value="">-- Anneau 3--</option>
-    <?php
-    $ColorRing3 = [
-        "noir"   => 1,      "brun"   => 10,      "rouge" => 100, 
-        "orange" => 1*KILO, "jaune"  => 10*KILO, "vert"  => 100*KILO, 
-        "bleu"   => 1*MEGA, "violet" => 10*MEGA, "gris"  => 100*MEGA, 
-        "blanc"  => 1*GIGA, 
-        "or" => 0.1, "argent" => 0.01];
-        
-        foreach($ColorRing3 as $color => $value) {
-            ?>
-        <option value="<?= $color ?>"><?= $color ?></option>
-        <?php
-    }
-    ?>
-</select>
+        </select>
 
-<select name="ring4" id="color-select4">
-    
-    <option value="">-- Anneau 4--</option>
-    <?php
-$ColorRing4 = ["brun" => 1, "rouge" => 2, "vert" => 0.5 , "bleu" => 0.25, "violet" => 0.10, "gris"=> 0.05, "or"=> 5, "argent" => 10];
+        <select name="ring3" id="color-select3">
+            <option value="">-- Anneau 3--</option>
+            <?php
 
-foreach($ColorRing4 as $color => $value) {
-?>
-    <option value="<?= $color ?>"><?= $color ?></option>
-<?php
-}
-?>
+            foreach ($ColorRing3 as $color => $value) { ?>
+                <option value="<?= $color ?>"><?= $color ?></option>
+            <?php } ?>
+        </select>
 
-</select>
-</form>
+        <select name="ring4" id="color-select4">
+
+            <option value="">-- Anneau 4--</option>
+            <?php
+            
+
+            foreach ($ColorRing4 as $color => $value) { ?>
+                <option value="<?= $color ?>"><?= $color ?></option>
+            <?php } ?>
+
+        </select>
+    </form>
 
 </body>
+
 </html>
-
-
-
