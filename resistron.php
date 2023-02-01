@@ -30,17 +30,17 @@ function option($ring, $color) { ?>
     <option value="<?= $color ?>" 
     <?php if ($ring == $color) { 
         echo ' selected="selected"';
-    } ?>><?= $color ?></option>
+    }
+    ?>><?= $color ?></option>
 <?php
 }
 
-$number1 = $color_ring12[$ring1] ?? null;
-$number2 = $color_ring12[$ring2] ?? null;
-$multiple = $color_ring3[$ring3] ?? null;
-$tolerance = $color_ring4[$ring4] ?? null;
+$number1 = $color_ring12[$ring1] ?? 0;
+$number2 = $color_ring12[$ring2] ?? 0;
+$multiple = $color_ring3[$ring3] ?? 0;
+$tolerance = $color_ring4[$ring4] ?? 0;
 
 $resistance = ($number1 . $number2) * $multiple;
-$tolerance;
 
 ?><!DOCTYPE html>
 
