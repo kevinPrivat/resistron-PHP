@@ -25,9 +25,3 @@ for (const selectElement of document.querySelectorAll("select")) {
         changeColor(selectElement);
     })
 }
-
-function calculAuto(selectElement) {
-    selectElement.addEventListener("change", () => {
-        calculAuto(selectElement);
-    })
-}
