@@ -115,7 +115,7 @@ if ($resistance > GIGA) {
 
     <form action="" method="get">
 
-        <select name="ring1" id="color-select1">
+        <select name="ring1" id="color-select1" onchange="this.form.submit();">
             <option value="">-- Anneau 1 --</option>
             <?php
             foreach ($color_ring12 as $color => $value) {
@@ -123,7 +123,7 @@ if ($resistance > GIGA) {
             } ?>
         </select>
 
-        <select name="ring2" id="color-select2">
+        <select name="ring2" id="color-select2" onchange="this.form.submit();">
             <option value="">-- Anneau 2 --</option>
             <?php
             foreach ($color_ring12 as $color => $value) {
@@ -132,7 +132,7 @@ if ($resistance > GIGA) {
 
         </select>
 
-        <select name="ring3" id="color-select3">
+        <select name="ring3" id="color-select3" onchange="this.form.submit();">
             <option value="">-- Anneau 3--</option>
             <?php
             foreach ($color_ring3 as $color => $value) {
@@ -140,7 +140,7 @@ if ($resistance > GIGA) {
             } ?>
         </select>
 
-        <select name="ring4" id="color-select4">
+        <select name="ring4" id="color-select4" onchange="this.form.submit();">
 
             <option value="">-- Anneau 4--</option>
             <?php
