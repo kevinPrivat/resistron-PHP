@@ -83,9 +83,12 @@ if ($resistance >= GIGA) {
             height: 100vh;
             width: 100vw;
             /* background: no-repeat url("images/resistance-taille-mesure.png") center; */
-        
         }
 
+        h1{
+            position: absolute;
+            top: 0;
+        }
         img {
             position: absolute;  
             width: 9%;
@@ -118,6 +121,7 @@ if ($resistance >= GIGA) {
 </head>
 
 <body>
+    <h1>CALCULEZ LA VALEUR DE VOTRE RÉSISTANCE</h1>
     <img src="images/resistance-taille-mesure.png" alt="">  
 
     <form action="" method="get">
