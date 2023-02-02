@@ -32,7 +32,7 @@ function option($ring, $color) { ?>
     <?php if ($ring == $color) { 
         echo ' selected="selected"';
     }
-    ?>><?= $color ?></option>
+    ?>><?= $color?></option>
 <?php
 }
 
@@ -78,6 +78,7 @@ if ($resistance >= GIGA) {
 
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -85,24 +86,31 @@ if ($resistance >= GIGA) {
             /* background: no-repeat url("images/resistance-taille-mesure.png") center; */
         }
 
-        h1{
-            position: absolute;
-            top: 0;
+        h1 {
+            margin-bottom: 50px;
         }
         img {
-            position: absolute;  
             width: 9%;
+            width: 100px;
+            margin: auto 50px;
         }
 
         form {
             z-index: 100;
-            padding-top: 12px;
         }
         form select {
             display: flex;
             flex-direction: column;
-            margin: 48px auto;
+            margin: 30px auto;
             height: 25px;
+        }
+        .main {
+            display: flex;
+
+        }
+
+        .result {
+            margin: 40px auto;
         }
 
         label {
@@ -122,8 +130,10 @@ if ($resistance >= GIGA) {
 
 <body>
     <h1>CALCULEZ LA VALEUR DE VOTRE RÉSISTANCE</h1>
-    <img src="images/resistance-taille-mesure.png" alt="">  
+    <div class="main">
 
+        <img src="images/resistance-taille-mesure.png" alt="">  
+        
     <form action="" method="get">
 
         <select name="ring1" id="color-select1" onchange="this.form.submit();">
@@ -133,7 +143,7 @@ if ($resistance >= GIGA) {
                 option($ring1, $color);
             } ?>
         </select>
-
+        
         <select name="ring2" id="color-select2" onchange="this.form.submit();">
             <option value="">-- Anneau 2 --</option>
             <?php
@@ -141,30 +151,33 @@ if ($resistance >= GIGA) {
                 option($ring2, $color);
             } ?>
 
-        </select>
+</select>
 
-        <select name="ring3" id="color-select3" onchange="this.form.submit();">
-            <option value="">-- Anneau 3--</option>
-            <?php
+<select name="ring3" id="color-select3" onchange="this.form.submit();">
+    <option value="">-- Anneau 3--</option>
+    <?php
             foreach ($color_ring3 as $color => $value) {
                 option($ring3, $color);
             } ?>
         </select>
 
         <select name="ring4" id="color-select4" onchange="this.form.submit();">
-
-            <option value="">-- Anneau 4--</option>
-            <?php
+            
+        <option value="">-- Anneau 4--</option>
+        <?php
             foreach ($color_ring4 as $color => $value) {
                 option($ring4, $color);
             } ?>
         </select>
-
         
+    </form>
+</div>
+    <div class="result">
+
         <label><input type="number" value="<?= $resistance/$divisor ?>" disabled><?=$unit?>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
-
-    </form>
+        
+    </div>
     <script src="code.js"></script>
 </body>
 
