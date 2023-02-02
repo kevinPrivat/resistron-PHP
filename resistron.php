@@ -82,6 +82,7 @@ if ($resistance > GIGA) {
             align-items: center;
             height: 100vh;
             width: 100vw;
+            
         }
 
         form select, button {
