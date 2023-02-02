@@ -82,10 +82,18 @@ if ($resistance >= GIGA) {
             align-items: center;
             height: 100vh;
             width: 100vw;
-            background: no-repeat url("images/resistance-taille-mesure.png") center;
-            padding-top: 80px;
+            /* background: no-repeat url("images/resistance-taille-mesure.png") center; */
+        
         }
 
+        img {
+            position: absolute;  
+
+        }
+
+        form {
+            z-index: 100;
+        }
         form select, button {
             display: flex;
             flex-direction: column;
@@ -112,6 +120,7 @@ if ($resistance >= GIGA) {
 </head>
 
 <body>
+    <img src="images/resistance-taille-mesure.png" alt="">
 
     <form action="" method="get">
 
