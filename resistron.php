@@ -105,6 +105,7 @@ if ($resistance > GIGA) {
         select {
             font-size: 0.9rem;
             padding: 2px 5px;
+            border: 0;
         }
     </style>
 
@@ -154,7 +155,7 @@ if ($resistance > GIGA) {
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
 
     </form>
-
+    <script src="code.js"></script>
 </body>
 
 </html>
