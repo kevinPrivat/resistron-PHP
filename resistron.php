@@ -82,13 +82,14 @@ if ($resistance > GIGA) {
             align-items: center;
             height: 100vh;
             width: 100vw;
-            
+            background: no-repeat url("images/resistance-taille-mesure.png") center;
+            padding-top: 80px;
         }
 
         form select, button {
             display: flex;
             flex-direction: column;
-            margin: 20px auto;
+            margin: 25px auto;
         }
 
         button {
