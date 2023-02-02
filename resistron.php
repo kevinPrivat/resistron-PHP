@@ -88,26 +88,24 @@ if ($resistance >= GIGA) {
 
         img {
             position: absolute;  
-
+            width: 9%;
         }
 
         form {
             z-index: 100;
+            padding-top: 12px;
         }
-        form select, button {
+        form select {
             display: flex;
             flex-direction: column;
-            margin: 25px auto;
-        }
-
-        button {
-            width: 120px;
-            text-align: center;
+            margin: 48px auto;
+            height: 25px;
         }
 
         label {
             font-size: 1rem;
             padding-right: 10px;
+            margin: auto 10px;
         }
 
         select {
@@ -120,7 +118,7 @@ if ($resistance >= GIGA) {
 </head>
 
 <body>
-    <img src="images/resistance-taille-mesure.png" alt="">
+    <img src="images/resistance-taille-mesure.png" alt="">  
 
     <form action="" method="get">
 
@@ -158,7 +156,7 @@ if ($resistance >= GIGA) {
             } ?>
         </select>
 
-        <br>
+        
         <label><input type="number" value="<?= $resistance/$divisor ?>" disabled><?=$unit?>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
 
