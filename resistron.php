@@ -70,6 +70,31 @@ if ($resistance > GIGA) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resistron</title>
     <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        form select, button {
+            display: flex;
+            flex-direction: column;
+            margin: 20px auto;
+        }
+
+        button {
+            width: 120px;
+            text-align: center;
+        }
+
         label {
             font-size: 1rem;
             padding-right: 10px;
@@ -121,7 +146,7 @@ if ($resistance > GIGA) {
             } ?>
         </select>
 
-        <input type="submit" value="submit">
+        <button type="submit">CALCULER</button>
         <br>
         <label><input type="number" value="<?= $resistance/$divisor ?>" disabled><?=$unit?>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
