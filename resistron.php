@@ -46,13 +46,13 @@ $resistance = ($number1 . $number2) * $multiple;
 $divisor = 1;
 $unit = "";
 
-if ($resistance > GIGA) { 
+if ($resistance >= GIGA) { 
     $divisor = GIGA;
     $unit = "G";
-} else if ($resistance > MEGA) {
+} else if ($resistance >= MEGA) {
     $divisor = MEGA;
     $unit = "M";
-} else if ($resistance > KILO) {
+} else if ($resistance >= KILO) {
     $divisor = KILO;
     $unit = "K";
 } else if ($resistance < 1) {
@@ -149,7 +149,6 @@ if ($resistance > GIGA) {
             } ?>
         </select>
 
-        <button type="submit">CALCULER</button>
         <br>
         <label><input type="number" value="<?= $resistance/$divisor ?>" disabled><?=$unit?>Ω</label>
         <label>±<input type="number" value="<?= $tolerance ?>" disabled>%</label>
